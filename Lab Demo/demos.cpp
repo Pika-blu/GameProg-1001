@@ -1,4 +1,9 @@
-#include <iostream>, <stings>, <iomanip>, <cstdlib>, <cmath>, <ctime>
+#include <iostream>
+#include <iomanip>
+#include <cstdlib>
+#include <cmath> 
+#include <ctime>
+#include <string>
 using namespace std;
 
 int main()
@@ -90,9 +95,9 @@ int main()
 		string name, city;
 
 		cout << "Please enter your name: ";
-		getline(cin, name);
+		getinline(cin, name);
 		cout << " Enter the city you live in: ";
-		getline(cin, city);
+		getinline(cin, city);
 
 		cout << " Hello, " << name << endl;
 		cout << " You live in, " << city << endl;
@@ -127,6 +132,98 @@ int main()
 		cout << rand() << "  ";
 		cout << rand() << "  ";
 		cout << rand() << endl;
+         
+		//week4 lecture notes
+
+		int score1, score2, score3;
+		double average;
+
+		cout << " enter 3 test scores";
+		cin >> score1 >> score2 >> score3;
+		average = (score1 + score2 + score3) / 3.0;
+		cout << fixed << showpoint << setprecision(1);
+		cout << "your average is " << average;
+
+		// if the avg = 100, congradulate the user
+		if (average == 100)
+		{
+			cout << "Congrats";
+		}
+
+		const int AScore = 80,
+			BScore = 70,
+			CScore = 60,
+			Dscore = 50,
+			minscore = 0,
+			maxscore = 100;
+
+		int testscore;
+		cout << "cunt what ya score?\n";
+		cin >> testscore;
+		// check valid
+		if (testscore >= minscore && testscore <= maxscore)
+		{
+			if (testscore >= AScore)
+				cout << " you go A";
+
+		}
+		else
+			cout << "ya fucked up";
+
+		// constant for member rates
+		const double adultRate = 120.0, childRate = 60.0, seniorRate = 100.0;
+		int choices;
+		int months;
+		double charges;
+
+		// display menu
+		cout << "===Health Culb Membership Menu===\n\n";
+		cout << "1. Standard membership.\n";
+		cout << "2. Child membership.\n";
+		cout << "3. Senor Membership.\n";
+		cout << "4. Quit the program.\n\n";
+
+		cout << "Enter your choice: ";
+		cin >> choices;
+
+		cout << fixed << showpoint << setprecision(2);
+		if (choices >= 1 && choices <= 3)
+		{
+			cout << "how many months?\n";
+			cin >> months;
+			switch (choices)
+			{
+			case 1:
+				charges = months * adultRate;
+				break;
+			case 2:
+				charges = months * childRate;
+				break;
+			case 3:
+				charges = months * seniorRate;
+				break;
+			case 4:
+				cout << "Goodbye";
+
+
+			}
+			cout << "The charges total are : $" << charges << endl;
+
+
+		}
+		else if (choices != 4)
+		{
+			cout << "\nThe valid choices are 1 throught 4.\n"
+				<< "Run the program again and select one of those.\n";
+		}
+		else
+
+
+
+
+
+
+
 
 	return 0;
 }

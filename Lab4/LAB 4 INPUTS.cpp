@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -6,7 +7,7 @@ using namespace std;
 
 int main()
 {
-	/*
+
 	//Declare Variables
 	ifstream inputFile;
 	string haiku;
@@ -24,5 +25,5 @@ int main()
 	inputFile.close();
 
 	return 0;
-	*/
+
 }

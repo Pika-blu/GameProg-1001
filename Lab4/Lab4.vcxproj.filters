@@ -18,8 +18,5 @@
     <ClCompile Include="LAB 4 OUTPUT.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LAB 4 INPUTS.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

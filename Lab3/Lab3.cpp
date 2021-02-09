@@ -11,6 +11,7 @@ int main()
 	float weeklyTotal;
 	float regularPay;
 	float overtimePay;
+	
 	// Variables that are constants but could be edited for the users needs and can vary company to company.
 	const float overtimeRate = 1.5;
 	const int subOvertimeHour = 40;
@@ -35,7 +36,6 @@ int main()
 		cout << "Your regular pay is : $" << regularPay << endl;
 		cout << "Your overtime pay is : $" << overtimePay << endl;
 		cout << "Your weekly total is : $" << weeklyTotal << endl;
-
 	}
 	// Regular wage
 	else if (hoursWorked <= 40 && hoursWorked >= 0)

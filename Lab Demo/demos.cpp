@@ -4,6 +4,7 @@
 #include <cmath> 
 #include <ctime>
 #include <string>
+#include <fstream>
 using namespace std;
 
 int main()
@@ -216,8 +217,215 @@ int main()
 			cout << "\nThe valid choices are 1 throught 4.\n"
 				<< "Run the program again and select one of those.\n";
 		}
-		else
+	
+			
+		double result = 0.666667 * 6.0;
+		cout << "result =" << result << endl;
+		//abs() = Absolute
+		if (abs(result - 4 < 0.001))
+		{
+			cout << "result ='s 4" << endl;
 
+		}
+		else
+		{
+			cout << "not 4";
+		}
+		const int
+			minAScore = 80,
+			minBScore = 70,
+			minCScore = 60,
+			minDScore = 50,
+			minScore = 0,
+			maxScore = 100;
+
+
+		int testScore;
+		char grade;
+		bool goodScore;
+
+		cout << "Enter your numaric grade" << endl;
+		cin >> testScore;
+		//Check input is valid
+		if (testScore >= minScore && testScore <= maxScore)
+		{
+			if (testScore >= minAScore)
+				grade = 'A';
+			else if (testScore >= minBScore)
+				grade = 'B';
+			else if (testScore >= minCScore)
+				grade = 'C';
+			else if (testScore >= minDScore)
+				grade = 'D';
+			else if (testScore >= 0)
+			{
+				grade = 'F';
+			}
+
+			cout << grade;
+
+		}
+		else
+			cout << "invalid score\n";
+
+
+		// constant for member rates
+		const double adultRate = 120.0, childRate = 60.0, seniorRate = 100.0;
+		int choices;
+		int months;
+		double charges;
+
+		do
+		{
+			// display menu
+			cout << "===Health Culb Membership Menu===\n\n";
+			cout << "1. Standard membership.\n";
+			cout << "2. Child membership.\n";
+			cout << "3. Senor Membership.\n";
+			cout << "4. Quit the program.\n\n";
+
+			cout << "Enter your choice: ";
+			cin >> choices;
+
+			cout << fixed << showpoint << setprecision(2);
+			while ((choices < 1) || (choices > 4))
+			{
+				cout << " Please enter 1,2,3 or 4\n";
+				cin >> choices;
+			}
+			//Valid iput territory
+			if (choices >= 1 && choices <= 3)
+			{
+				cout << "how many months?\n";
+				cin >> months;
+				switch (choices)
+				{
+				case 1:
+					charges = months * adultRate;
+					break;
+				case 2:
+					charges = months * childRate;
+					break;
+				case 3:
+					charges = months * seniorRate;
+					break;
+				case 4:
+					cout << "Goodbye";
+
+
+				}
+				cout << "The charges total are : $" << charges << endl;
+
+			}
+
+		} while (choices != 4);
+
+
+		int numDays;
+		double dailySales,
+			totalSales = 0.0,
+			averageSales;
+
+		cout << " For how many days do your have sale figures?\n";
+		cin >> numDays;
+
+		//initalization ; condition l update
+		for (int days = 1; days <= numDays; days++)
+		{
+			cout << " Enter the sales for day " << days << ": ";
+			cin >> dailySales;
+			totalSales += dailySales;
+		}
+
+		averageSales = totalSales / numDays;
+		cout << fixed << showpoint << setprecision(2);
+		cout << "\nTotal Sales: $" << totalSales << endl;
+		cout << "\nAverage  Sales : $" << averageSales << endl;
+
+		outputFile.open("demofile.txt");
+		cout << "Enter the names of 3 friends \n Enter name \n";
+		cin >> name1;
+		cin >> name2;
+		cin >> name3;
+
+		outputFile << name1 << endl;
+		outputFile << name2 << endl;
+		outputFile << name3 << endl;
+
+
+
+		cout << " Now writing data to the file \n\n";
+		//Write to the file 
+		outputFile << "Lyra\n Youre a babe";
+		outputFile << "Epic file moments";
+		outputFile.close();
+
+		cout << "Done";
+
+
+		inputFile.open("demofile.txt");
+
+		cout << "Reading data from file\n";
+		inputFile >> name;
+		cout << name << endl;
+
+		inputFile >> name;
+		cout << name << endl;
+
+		inputFile >> name;
+		cout << name << endl;
+
+		inputFile >> name;
+		cout << name << endl;
+
+		ofstream outputFile;
+		ifstream inputFile;
+		int numDays;
+		double sales;
+		// open output file
+
+		cout << "For homw many days do you have sales?\n";
+		cin >> numDays;
+		outputFile.open("Sales.txt");
+		for (int count = 1; count <= numDays; count++)
+		{
+			cout << "Enter sales for day\n";
+			cin >> sales;
+			outputFile << sales << endl;
+
+
+		}
+
+		outputFile.close();
+
+		ifstream inputFile;
+		int numDays = 0;
+		double sales, // sales amount for the day
+			totalSales = 0.0;
+		string filename;
+
+		cout << "Enter the filename: ";
+		cin >> filename;
+
+		inputFile.open(filename.c_str());
+		filename += ".txt";
+		if (inputFile)
+		{
+
+			//reached the end of file
+			while (inputFile >> sales)
+			{
+				//Process our info from the file
+				totalSales += sales;
+				numDays++;
+			}
+
+			inputFile.close();
+
+			cout << "total sales\n" << totalSales << "over " << numDays << " days\n";
+		}
+		else
+			cout << "Error cant open files";
 
 
 

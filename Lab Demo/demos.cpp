@@ -1,10 +1,11 @@
 #include <iostream>
-#include <iomanip>
+#include <iomanip> // for random #
 #include <cstdlib>
 #include <cmath> 
-#include <ctime>
-#include <string>
-#include <fstream>
+#include <ctime> // for time
+#include <string> //obvi
+#include <fstream> //for files
+#include <vector> //obvi
 using namespace std;
 
 int main()
@@ -96,9 +97,9 @@ int main()
 		string name, city;
 
 		cout << "Please enter your name: ";
-		getinline(cin, name);
+		getline(cin, name);
 		cout << " Enter the city you live in: ";
-		getinline(cin, city);
+		getline(cin, city);
 
 		cout << " Hello, " << name << endl;
 		cout << " You live in, " << city << endl;
@@ -427,10 +428,123 @@ int main()
 		else
 			cout << "Error cant open files";
 
+		//basic array and for loop
+		const int NUM_EMPLOYEES = 6;
+		int hours[NUM_EMPLOYEES];
+		int i; //counter
+
+		cout << "Enter hours worked by " << NUM_EMPLOYEES << " employees\n";
+
+		for (i = 0; i < NUM_EMPLOYEES; i++)
+		{
+			cin >> hours[i];
+		}
+
+		cout << "the hours you have entered are: ";
+
+		for (i = 0; i < NUM_EMPLOYEES; i++)
+		{
+			cout << "  " << hours[i];
+		}
 
 
 
+		//Basic array reading a file 
+		const int NUM_EMPLOYEES = 6;
+		int hours[NUM_EMPLOYEES];
+		int i = 0;//counter
+		
+		ifstream datafile;
 
+		datafile.open("work.txt");
+		if (!datafile)
+		{
+			cout << "error opening file";
+		}
+		else
+		{
+			while (i < NUM_EMPLOYEES && datafile >> hours[i])
+			{
+				i++;
+
+
+
+			}
+			datafile.close();
+
+			cout << "Enter hours worked by " << NUM_EMPLOYEES << " employees\n";
+			for (int count = 0; count < i; count++)
+			{
+				cout << "Employee " << count + 1 << " : ";
+				cout << hours[count] << endl;
+			}
+		}
+
+		//reading a string (which is an array) and checking for vowels
+		char ch;
+		int vowel = 0;
+		string sentence;
+
+		cout << "Enter any sentance and I will tell you how many vowerl are in it.\n";
+
+		getline(cin, sentence);
+
+		for (int i = 0; i < sentence.length(); i++)
+		{
+			ch = toupper(sentence[i]);
+			switch (ch)
+			{
+			case 'A':
+			case 'E':
+			case 'I':
+			case 'O':
+			case 'U':
+			case 'Y':
+				vowel++;
+			}
+
+		}
+
+
+		cout << "The vowel count is :" << vowel << endl;
+
+		const int NUM_EMPS = 5;
+		int i;
+		int hours[NUM_EMPS];
+		double payrate[NUM_EMPS];
+		double grosspay;
+		int c;
+
+		cout << "enter # of emps \n";
+		for (i = 0; i < NUM_EMPS; i++)
+		{
+			cout << "ENter hours worked by emp #: " << (i + 1) << ":";
+			cin >> hours[i];
+			cout << " Hourly pay rate for emps #: " << (i + 1) << ":";
+			cin >> payrate[i];
+		}
+		cout << "\nHere is the gross pay for each employee:\n";
+		cout << fixed << showpoint << setprecision(2);
+
+		for (c = 0; c < NUM_EMPS; c++)
+		{
+			grosspay = hours[c] * payrate[c];
+			cout << " Employee #" << (c + 1) << ": $" << grosspay << endl;
+		}
+
+		//vectors
+
+		vector<int> values;
+
+		values.push_back(20);
+		values.push_back(200);
+		values.push_back(420);
+
+		cout << " The size of values is" << values.size() << endl;
+		for (i = 0; i < values.size(); i++)
+		{
+			cout << "  " << values[i];
+		}
 
 
 	return 0;

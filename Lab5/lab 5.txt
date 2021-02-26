@@ -1,0 +1,6 @@
+﻿Build started...
+1>------ Build started: Project: Lab5, Configuration: Debug Win32 ------
+1>Lab5.cpp
+1>C:\Users\Frown\source\repos\Game-1001\Lab5\Lab5.cpp(67): error C4700: uninitialized local variable 'lt' used
+1>Done building project "Lab5.vcxproj" -- FAILED.
+========== Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========

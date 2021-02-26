@@ -1,0 +1,12 @@
+﻿'Assignment 1.exe' (Win32): Loaded 'C:\Users\Frown\source\repos\Game-1001\Debug\Assignment 1.exe'. Symbols loaded.
+'Assignment 1.exe' (Win32): Loaded 'C:\Windows\SysWOW64\ntdll.dll'. 
+'Assignment 1.exe' (Win32): Loaded 'C:\Windows\SysWOW64\kernel32.dll'. 
+'Assignment 1.exe' (Win32): Loaded 'C:\Windows\SysWOW64\KernelBase.dll'. 
+'Assignment 1.exe' (Win32): Loaded 'C:\Windows\SysWOW64\msvcp140d.dll'. 
+'Assignment 1.exe' (Win32): Loaded 'C:\Windows\SysWOW64\vcruntime140d.dll'. 
+'Assignment 1.exe' (Win32): Loaded 'C:\Windows\SysWOW64\ucrtbased.dll'. 
+The thread 0x2980 has exited with code 0 (0x0).
+The thread 0x6af4 has exited with code -1073741510 (0xc000013a).
+The thread 0x526c has exited with code -1073741510 (0xc000013a).
+The thread 0x301c has exited with code -1073741510 (0xc000013a).
+The program '[26200] Assignment 1.exe' has exited with code -1073741510 (0xc000013a).

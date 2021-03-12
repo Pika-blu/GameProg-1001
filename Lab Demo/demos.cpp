@@ -549,3 +549,127 @@ int main()
 
 	return 0;
 }
+// learniong functions 
+void displayMessage()
+{
+	cout << "Hello from func\n";
+
+}
+
+int main()
+{
+	int count;
+	cout << "Hello from main\n";
+	cout << "How3 many mesages do you want to see?\n";
+	cin >> count;
+	for (int i = 0; i < count; i++)
+	{
+		displayMessage();
+	}
+
+	cout << "Back in main func\n";
+	return 0;
+}
+
+//function prototypes
+void first();
+void second();
+int main()
+{
+	first();
+	return 0;
+}
+
+void second()
+{
+	cout << "Hello from second\n";
+	return;
+}
+
+void first()
+{
+	cout << "hello from first\n";
+	second();
+}
+
+//func prototype
+void displayValue(int, int, int);
+
+int main()
+{
+
+	int value1, value2, value3;
+	cout << "Enter 3 int values\n";
+	cin >> value1 >> value2 >> value3;
+
+	displayValue(value1, value2, value3);
+
+
+	return 0;
+}
+
+void displayValue(int num1, int num2, int num3)
+{
+	cout << "The sum is " << (num1 + num2 + num3) << endl;
+}
+
+void function();
+//GLobal Variable
+int num = 0;
+
+int main()
+{
+
+	cout << "In main, num is " << num << endl;
+	function();
+	cout << "Back in main, num is :" << num << endl;
+
+	return 0;
+}
+
+void function()
+{
+	cout << "In func, num is " << num << endl;
+	num = 50;
+	cout << "Now ive changed the num to " << num << endl;
+}
+
+void  cali();
+//GLobal Variable
+const int BIRDS = 500; //much safer vs global variables 
+
+int main()
+{
+
+	cout << "In main, there are " << BIRDS << endl;
+	cali();
+	cout << "Back in main, num is :" << BIRDS << endl;
+
+	return 0;
+}
+
+void cali()
+{
+	int BIRDS = 100000; // Shadow variable doesn't affect the global
+	cout << "In func, num is " << BIRDS << endl;
+
+} 
+
+// FUnction Doubler.
+void doubleNumber(int& refVar);
+
+int main()
+{
+	int value = 4;
+
+	cout << " In main value is :" << value << endl;
+	doubleNumber(value);
+	cout << "Now back in main, value is :" << value << endl;
+
+	return 0;
+}
+
+void doubleNumber(int& refVar)
+{
+	refVar *= 2;
+}

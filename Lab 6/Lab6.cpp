@@ -15,8 +15,8 @@ int main()
 	celcius(value); //Runs function with user input variable
 
 	cout << "Thank you for using our weather converter.\n";
-	cout << "For you convience we will now display a table of -20 too 100 Fahrenheit converted to Celsius.\n";
-	cout << "Press Enter for table\n";
+	cout << "For you convience we will now display a table of -20 to 100 Fahrenheit converted to Celsius.\n";
+	cout << "Press [ENTER] for table\n";
 	cin.get();
 	cin.get();
 	

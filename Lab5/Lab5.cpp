@@ -19,6 +19,10 @@ int main()
 	{
 		cin >> userInput[i];		
 	}
+	typedef int oneDArray[20];
+	
+	for (int val : userInput)
+		cout << val << " ";
 	
 	cout << "\nYou have entered the following numbers\n";
 	for (i = 0; i < ISIZE; i++)
